@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 5</title>
+</head>
+<body>
+    <h2>Name</h2>
+    <form id="nameForm">
+        <input type="text" id="username" placeholder="Enter your name" required>
+        <button type="submit">Send</button>
+    </form>
+    <p id="response"></p>
+
+    <script>
+        const form = document.getElementById("nameForm");
+        const responseP = document.getElementById("response");
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            fetch("lab5_backend.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username: username })
+            })
+            .then(response => response.json())
+            .then(data => {
+                responseP.innerText = "Status: " + data.status + ", Message: " + data.message;
+            })
+            .catch(err => {
+                responseP.innerText = "Error: " + err;
+            });
+        });
+    </script>
+</body>
+</html>
