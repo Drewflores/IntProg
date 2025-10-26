@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>XMLHttpRequest</title>
+    </head>
+    <body>
+        <h3>XMLHttpRequest</h3>
+        <button id="loadButton">Load Post Data</button>
+        <div id="output"></div>
+
+        <script>
+            const loadButton = document.getElementById('loadButton');
+            loadButton.addEventListener("click", loadData);
+
+            function loadData(){
+                const xhr = new XMLHttpRequest();
+
+                xhr.onreadystatechange = function(){
+                    if (xhr.readyState === 4){
+                        const output = document.getElementById('output');
+                        if (xhr.status === 200){
+                            const data = JSON.parse(xhr.responseText);
+                            output.innerHTML = `<span><strong>Post Title:</strong> ${data.title}</span><br>
+                            <span><strong>Content: </strong>${data.body}</span>`;
+                        } else {
+                            output.innerHTML = `<span>Error: ${xhr.status} - ${xhr.statusText}</span>`;
+                    }
+                }
+            }
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/1", true);
+            xhr.send();
+            }
+        </script>
+
+    </body>
+</html>
