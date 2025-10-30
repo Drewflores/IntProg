@@ -1,0 +1,30 @@
+--GUIDE QUESTIONS--
+
+1. What are the main difference between XMLHttpRequest and Fetch API?
+
+   -Both XMLHttpRequest and fetch are ways to make asynchronous HTTP requests in JavaScript.
+    However, they differ significantly in syntax, promise handling and features.
+    XMLHttpRequest is event-driven and requires attaching event listeners to handle response/
+    error states. On the other hand, fetch provides a more straightforward and intuitive way
+    of making HTTP requests. It is Promise-based and returns a promise that resolves with
+    the response or rejects with an error.
+ 
+2. Why is the Fetch API considered more modern and readable?
+
+   -Because of its cleaner syntax, promise-based approach and imrpoved handling of features 
+    like error handling, headers and Cross-Origin Resource Sharing(CORS).
+
+3. What is the purpose of the .then() and .catch() methods in Fetch?
+ 
+   -The .then() and .catch() methods are used for handling the result of the request.
+    The .then() is used for a successful request or resolution of a promise. it takes a
+    callback function as an argument. The callback function will then take the response
+    object from the request as its argument. The .catch() method is used to handle errors 
+    or rejections. It takes a callback function that will be executed if an error occurs.
+ 
+4. What happens when you send a POST request to the placeholder API?
+   
+   -When you send a POST request to the placeholder API, you're creating or submiting data
+    to its server. The placeholder API will then simulates the server-side processing of 
+    recieved data and responds with a status code indicating the success or failure of the 
+    operation.   

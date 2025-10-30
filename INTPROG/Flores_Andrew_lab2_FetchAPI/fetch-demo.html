@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-devide-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Fetch API</h1>
+        <button type="button" id="loadData">Load Post Data</button>
+        <h2>Result: </h2>
+        <div id="output"></div>
+
+        <script>
+            document.getElementById('loadData').addEventListener("click", () => {
+                const output = document.getElementById('output');
+
+                fetch("https://jsonplaceholder.typicode.com/posts/1")
+                    .then(response1 => {
+                      if (!response1.ok){
+                        throw new Error(`HTTP error! Status: ${response1.status}`);
+                      }
+                      return response1.json();
+                   })  
+                   .then(data1 => {
+                      output.innerHTML = `<h4>GET REQUEST: </h4>
+                      <p><strong>Post Title:</strong> ${data1.title}</p>
+                      <p><strong>Content: </strong>${data1.body}</p>`;
+                   })
+                   .catch(error1 => {
+                      output.innerHTML = `<p>Error: ${error1.message}</p>`;
+                   });
+
+                fetch("https://jsonplaceholder.typicode.com/posts", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        title: "My New Post",
+                        body: "Learning Fetch API is fun",
+                        userId: 1
+                    })
+                })
+                   .then(response2 => {
+                      if (!response2.ok){
+                        throw new Error(`HTTP error! Status: ${response2.status}`);
+                      }
+                      return response2.json();
+                   })  
+                   .then(data2 => {
+                      output.innerHTML += `<h4>POST REQUEST: </h4>
+                      <p><strong>New Post Created!</strong></p>
+                      <p><strong>Post ID: </strong>${data2.id}</p>`;
+                   })
+                   .catch(error2 => {
+                      output.innerHTML += `<p>Error: ${error2.message}</p>`;
+                   });
+            });
+        </script>
+    </body>
+</html>
