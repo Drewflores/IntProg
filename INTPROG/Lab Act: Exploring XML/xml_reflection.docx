@@ -1,0 +1,8 @@
+REFLECTION
+
+     I learned that xml have similarities with html and little bit of javascript. In the exercise
+ where I created student data, the idea is just like a javascript object but instead of key, I used 
+ tags just like in html to enclosed the values. I also followed some of the rules in html like adding
+ a closing tag, case sensitivity when creating tags and proper nesting. It also has a single root element 
+ to have a clear hierarchical structure and since XML is a text-based has a self-describing structure, it
+ can be easily read by humana and machines, ensuring interoperability.    
