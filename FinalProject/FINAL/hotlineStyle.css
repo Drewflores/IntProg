@@ -1,0 +1,50 @@
+/* Hotline page styles */
+body {
+    background: #f4f6f7;
+}
+.hotline-card {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    background: white;
+    padding: 2.5rem 3rem;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+}
+.hotline-card h1 {
+    font-size: 3.2rem;
+    margin: 0 0 1.6rem;
+    color: #0aa69a;
+    font-weight: 800;
+    line-height: 1.06;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    text-align: center;
+}
+.hotline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem 4rem;
+    align-items: center;
+}
+.hotline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hotline-item .label {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+.pill {
+    background: #d6d6d6;
+    color: #111;
+    padding: 0.5rem 1.4rem;
+    border-radius: 22px;
+    min-width: 140px;
+}
+
+@media (max-width: 720px) {
+    .hotline-grid { grid-template-columns: 1fr; }
+    .hotline-card { padding: 1.6rem; }
+    .hotline-card h1 { font-size: 1.9rem; }
+}

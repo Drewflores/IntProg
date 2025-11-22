@@ -1,0 +1,41 @@
+/* Weather information page styles */
+.info-card {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    background: white;
+    padding: 2.5rem 3rem;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+}
+.info-card h1 {
+    font-size: 3.4rem;
+    margin: 0 0 2rem;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #0aa69a;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    text-align: center;
+}
+.table-wrap { display:flex; justify-content:center; }
+.info-table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 820px;
+}
+.info-table th, .info-table td {
+    border: 1px solid #9aa1a1;
+    padding: 0.8rem 1rem;
+}
+.info-table thead th {
+    background: #d0d3d4;
+    color: #0aa69a;
+    font-weight: 700;
+}
+.info-table tbody td { background: #fff; }
+
+@media (max-width: 720px) {
+    .info-card { padding: 1.6rem; }
+    .info-card h1 { font-size: 1.9rem; }
+    .info-table { width: 100%; }
+}
